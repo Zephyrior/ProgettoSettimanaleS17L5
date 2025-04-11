@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -30,9 +31,10 @@ public class Postazione {
     private int numMaxOccupanti;
 
     @OneToMany(mappedBy = "postazione", cascade = CascadeType.ALL)
-    private List<Prenotazione> prenotazioni;
+    private List<Prenotazione> prenotazioni = new ArrayList<>();
 
     @ManyToOne
+    @JoinColumn(name = "edificio_id")
     private Edificio edificio;
 
     @Column(nullable = false)

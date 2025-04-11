@@ -27,9 +27,11 @@ public class Prenotazione {
     private LocalDate dataFinePrenotazione;
 
     @ManyToOne
+    @JoinColumn(name = "utente_id")
     private Utente utente;
 
     @ManyToOne
+    @JoinColumn(name = "postazione_id")
     private Postazione postazione;
 
 }

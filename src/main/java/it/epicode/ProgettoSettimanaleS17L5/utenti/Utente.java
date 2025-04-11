@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -25,5 +26,5 @@ public class Utente {
     private String email;
 
     @OneToMany(mappedBy = "utente", cascade = CascadeType.ALL)
-    private List<Prenotazione> prenotazioni;
+    private List<Prenotazione> prenotazioni = new ArrayList<>();
 }

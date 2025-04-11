@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -30,5 +31,5 @@ public class Edificio {
     private String citta;
 
     @OneToMany(mappedBy = "edificio", cascade = CascadeType.ALL)
-    private List<Postazione> postazioni;
+    private List<Postazione> postazioni = new ArrayList<>();
 }

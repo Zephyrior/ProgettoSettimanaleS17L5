@@ -1,6 +1,7 @@
 package it.epicode.ProgettoSettimanaleS17L5.postazioni;
 
 import it.epicode.ProgettoSettimanaleS17L5.utenti.Utente;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,7 @@ public class PostazioneService {
         return postazioneRepository.findByTipologiaAndCitta(tipologia, citta);
     }
 
+    @Transactional
     public boolean isPostazioneDisponibile(Postazione postazione, int numOccupanti, LocalDate dataPrenotazione) {
         if (numOccupanti > postazione.getNumMaxOccupanti() ) {
             return false;

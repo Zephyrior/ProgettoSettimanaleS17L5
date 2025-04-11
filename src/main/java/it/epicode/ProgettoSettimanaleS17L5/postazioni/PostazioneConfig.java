@@ -1,5 +1,7 @@
 package it.epicode.ProgettoSettimanaleS17L5.postazioni;
 
+import it.epicode.ProgettoSettimanaleS17L5.edifici.EdificioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -7,6 +9,9 @@ import java.util.ArrayList;
 
 @Configuration
 public class PostazioneConfig {
+
+//    @Autowired
+//    private EdificioRepository edificioRepository;
 
     @Bean
     public Postazione postazione1() {
